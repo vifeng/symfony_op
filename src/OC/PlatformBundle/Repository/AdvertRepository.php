@@ -16,7 +16,8 @@ class AdvertRepository extends EntityRepository
       ->addSelect('i')
       ->leftJoin('a.categories', 'c')
       ->addSelect('c')
-      ->orderBy('a.date', 'DESC')
+      // Ne marche pas sous symfony 3
+      // ->orderBy('a.date', 'DESC')
       ->getQuery()
     ;
 
